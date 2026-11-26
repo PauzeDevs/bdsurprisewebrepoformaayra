@@ -12,8 +12,39 @@
 .wrap{width:min(1050px,calc(100% - 40px));margin:auto}.top{display:flex;justify-content:space-between;align-items:center;padding:25px 0;border-bottom:1px solid var(--line);font-size:10px;letter-spacing:.19em;text-transform:uppercase;color:var(--muted)}.hero{padding:72px 0 54px;text-align:center}.eyebrow{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}h1,h2,.serif{font-family:'Playfair Display',serif;font-weight:500}h1{font-size:clamp(48px,9vw,100px);line-height:.98;letter-spacing:-.055em;margin:22px 0 18px}h1 em{color:#9b8178;font-weight:500}.intro{max-width:430px;margin:0 auto;color:#766c63;line-height:1.8;font-size:14px}.hero-photo{width:min(690px,100%);margin:42px auto 0;position:relative}.hero-photo img{width:100%;height:min(720px,95vw);object-fit:cover;object-position:center 55%;display:block;filter:saturate(.83)}.photo-note{position:absolute;right:-15px;bottom:22px;background:#f8f4ed;padding:12px 17px;transform:rotate(3deg);font-family:'Playfair Display',serif;font-style:italic;font-size:15px;box-shadow:0 5px 20px #34251b15}.music{display:inline-flex;align-items:center;gap:10px;margin-top:28px;border:1px solid #c9bdb0;border-radius:99px;padding:12px 18px;background:transparent;color:var(--ink);cursor:pointer;font-size:12px;letter-spacing:.04em}.music:hover{background:#ebe3d8}.music .dot{width:7px;height:7px;border-radius:50%;background:#9a7f73}.section{padding:78px 0}.section-head{text-align:center;margin-bottom:35px}.section-head h2{font-size:clamp(34px,5vw,52px);margin:10px 0}.section-head p{font-size:13px;color:var(--muted);line-height:1.7}.gallery{display:grid;grid-template-columns:1fr 1fr;gap:34px 25px;align-items:start}.polaroid{background:#fbf8f2;padding:12px 12px 18px;box-shadow:0 8px 25px #473b3010;max-width:420px;margin:auto;transition:transform .35s}.polaroid:nth-child(odd){transform:rotate(-1.5deg)}.polaroid:nth-child(even){transform:rotate(1.3deg);margin-top:42px}.polaroid:hover{transform:rotate(0) translateY(-5px)}.polaroid img{width:100%;height:440px;object-fit:cover;display:block;filter:saturate(.82)}.polaroid:nth-child(3) img{filter:grayscale(1)}.polaroid small{display:block;text-align:center;padding-top:14px;color:#82766b;font:italic 15px 'Playfair Display',serif}.wide-note{margin:80px auto 0;max-width:620px;text-align:center;padding:48px 28px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.wide-note h2{font-size:clamp(32px,5vw,48px);margin:14px 0}.wide-note p{font-size:14px;line-height:1.9;color:#756b62}.wish{padding:80px 0 95px;text-align:center}.cake{font-size:66px;display:block;margin:20px auto 10px;animation:bob 3s ease-in-out infinite}@keyframes bob{50%{transform:translateY(-8px)}}.wish h2{font-size:clamp(38px,6vw,60px);margin:12px 0}.wish p{max-width:440px;margin:0 auto;color:#756b62;line-height:1.8;font-size:14px}.wish button{margin-top:25px;background:var(--ink);color:#fffaf2;border:0;padding:14px 23px;border-radius:99px;cursor:pointer}.footer{text-align:center;padding:24px;border-top:1px solid var(--line);font-size:10px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase}.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s}.reveal.show{opacity:1;transform:none}.confetti{position:fixed;top:-15px;width:8px;height:12px;z-index:10;animation:fall 2.8s linear forwards}@keyframes fall{to{transform:translateY(110vh) rotate(650deg);opacity:0}}#player{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
 @media(max-width:650px){.wrap{width:min(100% - 30px,520px)}.hero{padding:54px 0 35px}.hero-photo{margin-top:30px}.hero-photo img{height:115vw;max-height:650px}.photo-note{right:0;bottom:12px}.section{padding:60px 0}.gallery{gap:20px 12px}.polaroid{padding:8px 8px 13px}.polaroid img{height:clamp(190px,62vw,330px)}.polaroid:nth-child(even){margin-top:25px}.polaroid small{font-size:12px;padding-top:10px}.wide-note{margin-top:55px;padding:38px 18px}.top{font-size:9px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+/* Diary-cover opening experience */
+body.diary-locked{overflow:hidden}
+.diary-cover{position:fixed;inset:0;z-index:20;display:grid;place-items:center;padding:24px;background:#e9e0d4;transition:opacity .9s ease,visibility .9s ease}
+.cover-book{position:relative;width:min(390px,88vw);min-height:560px;max-height:82vh;aspect-ratio: .69/1;background:#eee7da;border:1px solid #d4c7b7;box-shadow:18px 20px 45px #4a392b25, inset 8px 0 12px #b6a28a30;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:36px 30px;overflow:hidden}
+.cover-book:before{content:"";position:absolute;left:17px;top:0;bottom:0;width:1px;background:#cdbdaa}
+.cover-book:after{content:"";position:absolute;inset:12px;border:1px solid #d7c9b8;pointer-events:none}
+.cover-stamp{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:#8b8075}
+.cover-title{font:500 clamp(44px,12vw,65px)/.98 'Playfair Display',serif;letter-spacing:-.05em;margin:35px 0 18px;color:#493e37}
+.cover-title em{color:#9b8178;font-weight:500}
+.cover-sub{font:italic 16px 'Playfair Display',serif;color:#82766b;line-height:1.6;max-width:230px}
+.cover-flower{font-size:31px;margin:23px 0;color:#a6aa91}
+.open-diary{position:relative;z-index:1;margin-top:30px;border:1px solid #a99a88;background:#493e37;color:#fbf8f2;padding:14px 24px;border-radius:2px;letter-spacing:.1em;text-transform:uppercase;font-size:10px;cursor:pointer;transition:transform .25s,background .25s}
+.open-diary:hover{transform:translateY(-3px);background:#66564b}
+.cover-foot{position:absolute;bottom:37px;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#9a8d7e}
+.diary-cover.opened{opacity:0;visibility:hidden;pointer-events:none}
+.diary-content{opacity:0;transform:translateY(12px);transition:opacity 1s ease .35s,transform 1s ease .35s}
+.diary-content.unlocked{opacity:1;transform:none}
+@media(max-height:700px){.cover-book{min-height:0;height:82vh}.cover-title{margin:22px 0 12px}.cover-flower{margin:12px 0}.open-diary{margin-top:15px}}
+@media(prefers-reduced-motion:reduce){.diary-cover,.diary-content,.open-diary{transition:none}}
 </style></head>
-<body><div class="grain"></div><main class="wrap">
+<body class="diary-locked">
+<div class="diary-cover" id="diaryCover">
+  <div class="cover-book">
+    <div class="cover-stamp">a little something for you · 2026</div>
+    <div class="cover-title">Maayra's<br><em>little diary.</em></div>
+    <div class="cover-flower">✿</div>
+    <p class="cover-sub">A few pages, a few pictures, and birthday wishes tucked inside.</p>
+    <button class="open-diary" id="openDiary" type="button">Open your diary&nbsp; ↗</button>
+    <div class="cover-foot">turn the page · it's your day</div>
+  </div>
+</div>
+<div class="grain"></div><main class="wrap diary-content" id="diaryContent">
 <header class="top"><span>a little birthday diary</span><span>made for Maayra ✿</span></header>
 <section class="hero">
 <div class="eyebrow">A small celebration of you · birthday edition</div>
@@ -37,6 +68,15 @@
 <footer class="footer">made with a little extra effort · happy birthday, Maayra</footer>
 </main>
 <script>
+
+const cover=document.getElementById('diaryCover');
+document.getElementById('openDiary').addEventListener('click',()=>{
+  cover.classList.add('opened');
+  document.body.classList.remove('diary-locked');
+  document.getElementById('diaryContent').classList.add('unlocked');
+  window.setTimeout(()=>cover.remove(),1100);
+});
+
 const btn=document.getElementById('musicBtn'),label=document.getElementById('musicLabel'),player=document.getElementById('player');let playing=false;
 btn.addEventListener('click',()=>{if(!playing){player.innerHTML='<iframe title="Birthday soundtrack" width="1" height="1" src="https://www.youtube-nocookie.com/embed/V9PVRfjEBTI?autoplay=1&enablejsapi=1" allow="autoplay; encrypted-media" referrerpolicy="strict-origin-when-cross-origin"></iframe>';label.textContent='Soundtrack playing';playing=true;btn.querySelector('.dot').style.background='#71836d'}else{player.innerHTML='';label.textContent='Play a little soundtrack';playing=false;btn.querySelector('.dot').style.background='#9a7f73'}});
 const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');obs.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
